@@ -15,7 +15,7 @@ class _HomeScreen extends State<HomeScreen> {
   @override
   Widget build(BuildContext context){
     return SingleChildScrollView(
-      padding: const EdgeInsets.only(right: 20,left: 20),
+      padding: EdgeInsets.only(right: 15.sp,left: 15.sp),
       child: Column(
           children: [
 
@@ -23,8 +23,8 @@ class _HomeScreen extends State<HomeScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 30.w,
-                  height: 30.w,
+                  width: 25.w,
+                  height: 25.w,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage('assets/images/logo/appLogo2.png')
@@ -43,6 +43,7 @@ class _HomeScreen extends State<HomeScreen> {
             SizedBox(height: 15.h,),
 
             const ImageCarosoulContainer(),
+
             SizedBox(height: 10.h,),
 
             GestureDetector(
@@ -52,7 +53,7 @@ class _HomeScreen extends State<HomeScreen> {
                 height: 150.h,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('assets/images/banners/SaleBanner.png'),
+                    image: AssetImage('assets/images/banners/saleBanners.jpg'),
                     fit: BoxFit.cover
                   ),
                 ),
@@ -66,9 +67,9 @@ class _HomeScreen extends State<HomeScreen> {
               children: [
                 GridTile(
                     child: Container(
-                      height: 160.h,
-                      width: 160.h,
-                      decoration: BoxDecoration(
+                      height: 160.w,
+                      width: 160.w,
+                      decoration: const BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage('assets/images/GridImages/Tshirt.png'),
                           fit: BoxFit.cover
@@ -78,9 +79,9 @@ class _HomeScreen extends State<HomeScreen> {
                 ),
                 GridTile(
                     child: Container(
-                      height: 160.h,
-                      width: 160.h,
-                      decoration: BoxDecoration(
+                      height: 160.w,
+                      width: 160.w,
+                      decoration: const BoxDecoration(
                           image: DecorationImage(
                               image: AssetImage('assets/images/GridImages/top.png'),
                               fit: BoxFit.cover
@@ -98,8 +99,8 @@ class _HomeScreen extends State<HomeScreen> {
               children: [
                 GridTile(
                     child: Container(
-                      height: 160.h,
-                      width: 160.h,
+                      height: 160.w,
+                      width: 160.w,
                       decoration: const BoxDecoration(
                           image: DecorationImage(
                               image: AssetImage('assets/images/GridImages/Salwaar.png'),
@@ -110,9 +111,9 @@ class _HomeScreen extends State<HomeScreen> {
                 ),
                 GridTile(
                     child: Container(
-                      height: 160.h,
-                      width: 160.h,
-                      decoration: BoxDecoration(
+                      height: 160.w,
+                      width: 160.w,
+                      decoration: const BoxDecoration(
                           image: DecorationImage(
                               image: AssetImage('assets/images/GridImages/Jeans.png'),
                               fit: BoxFit.cover

@@ -44,8 +44,8 @@ Widget buildItem(BuildContext context, String icon,String label) {
           )
         ),
       ),
-      const SizedBox(height: 7,),
-      Text(label, style: Theme.of(context).textTheme.bodySmall,)
+      SizedBox(height: 7.h),
+      Text(label, style: Theme.of(context).textTheme.bodySmall)
     ],
   );
 }

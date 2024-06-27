@@ -24,7 +24,7 @@ class _BottomNavBarController extends State<BottomNavBarController> {
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 25.sp,
+        toolbarHeight: 25.h,
       ),
 
       body: screens[_currentIndex],
@@ -33,10 +33,12 @@ class _BottomNavBarController extends State<BottomNavBarController> {
         height: 45.sp,
         child: BottomNavigationBar(
           currentIndex: _currentIndex,
+
           iconSize: 19.sp,
           selectedItemColor: Colors.lightBlue,
           unselectedItemColor: Colors.black87,
-          selectedFontSize: 0, // To reduce Bottom Margin
+          selectedFontSize: 0.sp, // To reduce Bottom Margin
+
           type: BottomNavigationBarType.fixed,
 
           onTap: (index){
@@ -50,9 +52,9 @@ class _BottomNavBarController extends State<BottomNavBarController> {
               icon: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const SizedBox(width: 25),
-                  Icon(Icons.home_outlined, size: 22.sp,),
-                  const SizedBox(width: 5),
+                  SizedBox(width: 25.w),
+                  Icon(Icons.home_outlined, size: 22.sp),
+                  SizedBox(width: 5.w),
                   if(_currentIndex==0) Text("Shop", style: TextStyle(fontSize: 11.sp,color: Colors.lightBlue)),
                 ],
               ),
@@ -63,7 +65,7 @@ class _BottomNavBarController extends State<BottomNavBarController> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     const Icon(CupertinoIcons.search),
-                    const SizedBox(width: 5,),
+                    SizedBox(width: 5.w,),
                     if(_currentIndex==1) Text("Search", style: TextStyle(fontSize: 11.sp,color: Colors.lightBlue)),
                   ],
                 ),
@@ -74,7 +76,7 @@ class _BottomNavBarController extends State<BottomNavBarController> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     const Icon(CupertinoIcons.cart),
-                    const SizedBox(width: 5,),
+                    SizedBox(width: 5.w),
                     if(_currentIndex==2) Text("Cart", style: TextStyle(fontSize: 11.sp,color: Colors.lightBlue)),
                   ],
                 ),
@@ -84,11 +86,10 @@ class _BottomNavBarController extends State<BottomNavBarController> {
                 icon: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    // const Icon(Icons.person_outlined),
                     const Icon(CupertinoIcons.person),
-                    const SizedBox(width: 5,),
+                    SizedBox(width: 5.w),
                     if(_currentIndex==3) Text("Profile", style: TextStyle(fontSize: 11.sp, color: Colors.lightBlue)) ,
-                    const SizedBox(width: 25,),
+                    SizedBox(width: 25.w),
                   ],
                 ),
                 label: ''

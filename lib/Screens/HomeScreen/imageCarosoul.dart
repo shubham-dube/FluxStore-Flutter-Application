@@ -12,10 +12,10 @@ class ImageCarosoulContainer extends StatefulWidget {
 class _ImageCarosoulContainer extends State<ImageCarosoulContainer> {
 
   int currentImage = 0;
-  List<String> imageList = [
-    'assets/images/banners/banner1.png',
-    'assets/images/banners/banner2.png',
-    'assets/images/banners/banner3.png',
+  static const List<AssetImage> imageList = [
+    AssetImage('assets/images/banners/banner1.png'),
+    AssetImage('assets/images/banners/banner2.png'),
+    AssetImage('assets/images/banners/banner3.png'),
   ];
 
   @override
@@ -26,14 +26,15 @@ class _ImageCarosoulContainer extends State<ImageCarosoulContainer> {
     return Stack(
       children: [
         CarouselSlider(
-          items: imageList.map((url) {
+
+          items: imageList.map((image) {
             return Builder(
               builder: (BuildContext context) {
                 return Container(
                   decoration: BoxDecoration(
                       color: Colors.white,
                       image: DecorationImage(
-                          image: AssetImage(url),
+                          image: image,
                           fit: BoxFit.cover
                       )
                   ),
@@ -41,6 +42,7 @@ class _ImageCarosoulContainer extends State<ImageCarosoulContainer> {
               },
             );
           }).toList(),
+
           options: CarouselOptions(
             height: 250.sp,
             autoPlay: true,
@@ -52,6 +54,7 @@ class _ImageCarosoulContainer extends State<ImageCarosoulContainer> {
               });
             },
           ),
+
         ),
 
         Positioned(
@@ -66,7 +69,7 @@ class _ImageCarosoulContainer extends State<ImageCarosoulContainer> {
                     width: 20.w,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5.sp),
-                      color: (i==currentImage) ? Colors.black54:Colors.black26,
+                      color: (i==currentImage) ? Colors.black87:Colors.black26,
                     ),
                   )
               ],
