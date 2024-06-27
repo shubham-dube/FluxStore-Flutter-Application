@@ -4,7 +4,7 @@ import 'Screens/SplashScreen/SplashScreen.dart';
 
 void main() {
   runApp(
-      const FluxStore()
+      const FluxStore()  // Starting App
   );
 }
 
@@ -13,7 +13,7 @@ class FluxStore extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
+    return ScreenUtilInit(              // Initializing ScreenUtil for my Smartphone
       designSize: const Size(360,780),
       minTextAdapt: true,
       splitScreenMode: true,
@@ -21,7 +21,7 @@ class FluxStore extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'FluxStore',
-          theme: ThemeData(
+          theme: ThemeData(                   // Setting Theme Data of Text and Icon etc.
             primarySwatch: Colors.lightBlue,
             fontFamily: 'Montserrat',
             textTheme: TextTheme(
@@ -35,7 +35,7 @@ class FluxStore extends StatelessWidget {
               color: Colors.black87
             ),
           ),
-          home: const SplashScreen(),
+          home: const SplashScreen(),  // Calling Splash Screen First
         );
       },
     );

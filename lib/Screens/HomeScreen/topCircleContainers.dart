@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class TopCircleContainers extends StatelessWidget {
   const TopCircleContainers({super.key});
 
+  // items to iterate through to make circular containers of each
   static const List<ItemData> items = [
     ItemData('assets/images/icons/tshirt.png','Men'),
     ItemData('assets/images/icons/frock.png','Women'),
@@ -17,7 +18,7 @@ class TopCircleContainers extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
-      children: items.map(
+      children: items.map(  // mapping items to make that containers
          (item){
               return buildItem(context,item.icon,item.label);
           }
@@ -50,6 +51,7 @@ Widget buildItem(BuildContext context, String icon,String label) {
   );
 }
 
+// Image Data Class which hold icon address and label to show
 class ItemData {
   final String icon;
   final String label;

@@ -12,6 +12,7 @@ class ImageCarosoulContainer extends StatefulWidget {
 class _ImageCarosoulContainer extends State<ImageCarosoulContainer> {
 
   int currentImage = 0;
+  // image List to make carosoul
   static const List<AssetImage> imageList = [
     AssetImage('assets/images/banners/banner1.png'),
     AssetImage('assets/images/banners/banner2.png'),
@@ -21,13 +22,14 @@ class _ImageCarosoulContainer extends State<ImageCarosoulContainer> {
   @override
   Widget build(BuildContext context){
 
-    int numberOfImages = imageList.length;
+    int numberOfImages = imageList.length; // We will use it to make image pointer (dashes)
 
     return Stack(
       children: [
+
         CarouselSlider(
 
-          items: imageList.map((image) {
+          items: imageList.map((image) {  // Mapping All Images to make image Containers
             return Builder(
               builder: (BuildContext context) {
                 return Container(
@@ -43,11 +45,11 @@ class _ImageCarosoulContainer extends State<ImageCarosoulContainer> {
             );
           }).toList(),
 
-          options: CarouselOptions(
+          options: CarouselOptions(  // Options of Carosoul Slider
             height: 250.sp,
             autoPlay: true,
             enlargeCenterPage: true,
-            viewportFraction: 1,
+            viewportFraction: 1,  // Width of one Image Container at a time
             onPageChanged: (index, reason) {
               setState(() {
                 currentImage = index;
@@ -57,11 +59,13 @@ class _ImageCarosoulContainer extends State<ImageCarosoulContainer> {
 
         ),
 
+        // Dashes to get pointed which image is sliding now
         Positioned(
           top: 240.sp,
             left: MediaQuery.of(context).size.width*0.35,
             child: Row(
               children: [
+                // Making Dashes as Number of Images
                 for(int i=0;i<numberOfImages;i++)
                   Container(
                     margin: EdgeInsets.only(right: 3.sp),

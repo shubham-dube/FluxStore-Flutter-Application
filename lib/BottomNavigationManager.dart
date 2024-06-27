@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'Screens/HomeScreen/HomeScreen.dart';
+import 'Screens/SearchScreen/SearchScreen.dart';
+import 'Screens/ProfileScreen/ProfileScreen.dart';
+import 'Screens/CartScreen/CartScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -11,20 +14,21 @@ class BottomNavBarController extends StatefulWidget {
 }
 
 class _BottomNavBarController extends State<BottomNavBarController> {
-  int _currentIndex = 0;
+  int _currentIndex = 0;  //current screen
 
+  // List of all Screens which are on the nav bar
   static final List<Widget> screens =  [
     const HomeScreen(),
-    const HomeScreen(),
-    const HomeScreen(),
-    const HomeScreen(),
+    const SearchScreen(),
+    const CartScreen(),
+    const ProfileScreen(),
   ];
 
   @override
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 25.h,
+        toolbarHeight: 25.h,  // Setting height to avoid overlapping mobile nav bar with our scaffold body
       ),
 
       body: screens[_currentIndex],
@@ -52,7 +56,7 @@ class _BottomNavBarController extends State<BottomNavBarController> {
               icon: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  SizedBox(width: 25.w),
+                  SizedBox(width: 25.w), // To make the extra space from the starting
                   Icon(Icons.home_outlined, size: 22.sp),
                   SizedBox(width: 5.w),
                   if(_currentIndex==0) Text("Shop", style: TextStyle(fontSize: 11.sp,color: Colors.lightBlue)),
