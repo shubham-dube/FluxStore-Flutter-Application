@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'topCircleContainers.dart';
+import 'imageCarosoul.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -17,22 +18,111 @@ class _HomeScreen extends State<HomeScreen> {
       padding: const EdgeInsets.only(right: 20,left: 20),
       child: Column(
           children: [
+
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 50.w,
-                  height: 50.w,
-                  decoration: BoxDecoration(
+                  width: 30.w,
+                  height: 30.w,
+                  decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('assets/images/logo/appLogo.png')
+                      image: AssetImage('assets/images/logo/appLogo2.png')
                     )
                   ),
                 ),
-                Text('Fluxstore',style: TextStyle(fontSize: 18.sp)),
+                SizedBox(width: 10.w,),
+                Text('Fluxstore',style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold)),
               ],
             ),
-            TopCircleContainers()
+
+            SizedBox(height: 20.h,),
+
+            const TopCircleContainers(),
+
+            SizedBox(height: 15.h,),
+
+            const ImageCarosoulContainer(),
+            SizedBox(height: 10.h,),
+
+            GestureDetector(
+              onTap: (){},
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: 150.h,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/banners/SaleBanner.png'),
+                    fit: BoxFit.cover
+                  ),
+                ),
+              ),
+            ),
+
+            SizedBox(height: 15.h,),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                GridTile(
+                    child: Container(
+                      height: 160.h,
+                      width: 160.h,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('assets/images/GridImages/Tshirt.png'),
+                          fit: BoxFit.cover
+                        )
+                      ),
+                    )
+                ),
+                GridTile(
+                    child: Container(
+                      height: 160.h,
+                      width: 160.h,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage('assets/images/GridImages/top.png'),
+                              fit: BoxFit.cover
+                          )
+                      ),
+                    )
+                )
+              ],
+            ),
+
+            SizedBox(height: 15.h,),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                GridTile(
+                    child: Container(
+                      height: 160.h,
+                      width: 160.h,
+                      decoration: const BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage('assets/images/GridImages/Salwaar.png'),
+                              fit: BoxFit.cover
+                          )
+                      ),
+                    )
+                ),
+                GridTile(
+                    child: Container(
+                      height: 160.h,
+                      width: 160.h,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage('assets/images/GridImages/Jeans.png'),
+                              fit: BoxFit.cover
+                          )
+                      ),
+                    )
+                )
+              ],
+            )
+
           ],
         ),
     );

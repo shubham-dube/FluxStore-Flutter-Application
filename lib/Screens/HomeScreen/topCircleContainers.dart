@@ -4,43 +4,48 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class TopCircleContainers extends StatelessWidget {
   const TopCircleContainers({super.key});
 
+  static const List<ItemData> items = [
+    ItemData('assets/images/icons/tshirt.png','Men'),
+    ItemData('assets/images/icons/frock.png','Women'),
+    ItemData('assets/images/icons/clothing.png','Clothing'),
+    ItemData('assets/images/icons/handBag.png','Hand Bag'),
+    ItemData('assets/images/icons/music.png','Music'),
+  ];
+
   @override
   Widget build(BuildContext context){
-    const List<ItemData> items = [
-      ItemData('assets/images/icons/shirtMen.png','Men'),
-      ItemData('assets/images/icons/frockWomen.webp','Women'),
-      ItemData('assets/images/icons/clothing.webp','Clothing'),
-      ItemData('assets/images/icons/handBagPosters.png','Posters'),
-      ItemData('assets/images/icons/diskMusic.jpg','Music'),
-    ];
-
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: items.map((item){
-        return buildItems(context,item.icon,item.label);
-      }).toList()
+
+      children: items.map(
+         (item){
+              return buildItem(context,item.icon,item.label);
+          }
+      ).toList()
+
     );
   }
 }
 
-Widget buildItems(BuildContext context, String icon,String label) {
+Widget buildItem(BuildContext context, String icon,String label) {
   return Column(
     mainAxisAlignment: MainAxisAlignment.center,
     mainAxisSize: MainAxisSize.min,
     children: [
       Container(
-        width: 50.w,
-        height: 50.w,
+        width: 45.w,
+        height: 45.w,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: Colors.lightBlueAccent,
           image: DecorationImage(
             image: AssetImage(icon),
-            fit: BoxFit.contain
+            fit: BoxFit.cover
           )
         ),
       ),
-      Text(label)
+      const SizedBox(height: 7,),
+      Text(label, style: Theme.of(context).textTheme.bodySmall,)
     ],
   );
 }
